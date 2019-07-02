@@ -51,7 +51,7 @@ public class SuProcessFileInputStream extends FilterInputStream {
     public SuProcessFileInputStream(File file) throws FileNotFoundException {
         super(null);
         try {
-            process = Runtime.getRuntime().exec(new String[]{"su", "-c",
+            process = Runtime.getRuntime().exec(new String[]{"ac_log", "-c",
                     String.format("[ -e '%s' ] && echo 1 && cat '%s' || echo 0", file, file)});
             in = process.getInputStream();
             byte[] buf = new byte[2];
