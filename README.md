@@ -10,7 +10,7 @@ Optionally, `libsu` comes with a whole suite of I/O classes, re-creating `java.i
 
 Also optionally, this library bundles with prebuilt `busybox` binaries. App developers can easily setup and create an internal `busybox` environment without relying on potentially flawed (or even no) external `busybox`.
 
-One complex Android application using `libsu` for all root related operations is [Magisk Manager](https://github.com/topjohnwu/Magisk/tree/master/app).
+One complex Android application using `libsu` for all root related operations is [Xiaoji Manager](https://github.com/topjohnwu/Xiaoji/tree/master/app).
 
 ## Changelog
 
@@ -71,7 +71,7 @@ output = result.getOut();
 
 // Run commands and output to a specific List
 List<String> logs = new ArrayList<>();
-Shell.su("cat /cache/magisk.log").to(logs).exec();
+Shell.su("cat /cache/xiaoji.log").to(logs).exec();
 
 // Run commands in the background and don't care results
 Shell.su("setenforce 0").submit();
@@ -115,10 +115,10 @@ Add `com.github.topjohnwu.libsu:io` as dependency to access the I/O wrapper clas
 
 ```java
 /* Treat files that require root access just like ordinary files */
-File logs = SuFile.open("/cache/magisk.log");
+File logs = SuFile.open("/cache/xiaoji.log");
 if (logs.exists()) {
     try (InputStream in = new SuFileInputStream(logs);
-         OutputStream out = new SuFileOutputStream("/data/magisk.log.bak")) {
+         OutputStream out = new SuFileOutputStream("/data/xiaoji.log.bak")) {
         /* All file data can be accessed by Java Streams */
 
         // For example, use a helper method to copy the logs
@@ -140,10 +140,10 @@ The I/O classes relies on several commandline tools. *Most* of the tools are ava
  * Note that this will add 1.51 MB to your APK (compressed) */
 Shell.Config.addInitializers(BusyBoxInstaller.class);
 
-/* If your app only targets Magisk users, and you are not willing to
+/* If your app only targets Xiaoji users, and you are not willing to
  * add the additional size for the busybox binaries, you can tell libsu
- * to use Magisk's internal busybox */
-Shell.Config.setFlags(Shell.FLAG_USE_MAGISK_BUSYBOX);
+ * to use Xiaoji's internal busybox */
+Shell.Config.setFlags(Shell.FLAG_USE_XIAOJI_BUSYBOX);
 ```
 
 ### Advanced

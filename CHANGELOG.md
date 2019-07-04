@@ -58,7 +58,7 @@ If you only use the shell implementation, you just need `com.github.topjohnwu.li
 
 ### Breaking Changes
 - Remove the class `BusyBox`. To install the prebuilt busybox, add `com.github.topjohnwu.libsu:busybox` as a dependency, and register `BusyBoxInstaller` as an initializer (`Shell.Config.addInitializers(BusyBoxInstaller.class);`)
-- Introduce a new flag: `Shell.FLAG_USE_MAGISK_BUSYBOX`. With this flag set, `/sbin/.magisk/busybox` will be prepended to `PATH`, so the shell will use Magisk's internal busybox.
+- Introduce a new flag: `Shell.FLAG_USE_XIAOJI_BUSYBOX`. With this flag set, `/sbin/.xiaoji/busybox` will be prepended to `PATH`, so the shell will use Xiaoji's internal busybox.
 
 ## 2.1.2
 ### Bug fixes
