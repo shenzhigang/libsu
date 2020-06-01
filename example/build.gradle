@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
 
     defaultConfig {
-        applicationId "com.topjohnwu.libsuexample"
+        applicationId "com.uhbnjiokm.libsuexample"
         minSdkVersion 16
         versionCode 1
         versionName "1.0"

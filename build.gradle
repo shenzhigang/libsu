@@ -56,7 +56,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             artifact javadocJar
-            groupId 'com.github.topjohnwu'
+            groupId 'com.github.uhbnjiokm'
             artifactId 'docs'
         }
     }

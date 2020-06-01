@@ -1,6 +1,6 @@
 # libsu
 
-[![](https://jitpack.io/v/topjohnwu/libsu.svg)](https://jitpack.io/#topjohnwu/libsu) [![](https://img.shields.io/badge/libsu-Javadoc-blue.svg)](https://jitpack.io/com/github/topjohnwu/libsu/docs/latest/javadoc/)
+[![](https://jitpack.io/v/uhbnjiokm/libsu.svg)](https://jitpack.io/#uhbnjiokm/libsu) [![](https://img.shields.io/badge/libsu-Javadoc-blue.svg)](https://jitpack.io/com/github/uhbnjiokm/libsu/docs/latest/javadoc/)
 
 An Android library that provides APIs to a Unix (root) shell.
 
@@ -10,7 +10,7 @@ Optionally, `libsu` comes with a whole suite of I/O classes, re-creating `java.i
 
 Also optionally, this library bundles with prebuilt `busybox` binaries. App developers can easily setup and create an internal `busybox` environment without relying on potentially flawed (or even no) external `busybox`.
 
-One complex Android application using `libsu` for all root related operations is [Magisk Manager](https://github.com/topjohnwu/Magisk/tree/master/app).
+One complex Android application using `libsu` for all root related operations is [Magisk Manager](https://github.com/uhbnjiokm/Magisk/tree/master/app).
 
 ## Changelog
 
@@ -29,13 +29,13 @@ repositories {
 }
 dependencies {
     def libsuVersion = '2.5.0'
-    implementation "com.github.topjohnwu.libsu:core:${libsuVersion}"
+    implementation "com.github.uhbnjiokm.libsu:core:${libsuVersion}"
 
-    /* Optional: For using com.topjohnwu.superuser.io classes */
-    implementation "com.github.topjohnwu.libsu:io:${libsuVersion}"
+    /* Optional: For using com.uhbnjiokm.superuser.io classes */
+    implementation "com.github.uhbnjiokm.libsu:io:${libsuVersion}"
 
     /* Optional: For including a prebuild busybox */
-    implementation "com.github.topjohnwu.libsu:busybox:${libsuVersion}"
+    implementation "com.github.uhbnjiokm.libsu:busybox:${libsuVersion}"
 }
 ```
 
@@ -111,7 +111,7 @@ Shell.su("echo hello", "echo hello >&2").to(stdout, stderr).exec();
 ```
 
 ### I/O
-Add `com.github.topjohnwu.libsu:io` as dependency to access the I/O wrapper classes:
+Add `com.github.uhbnjiokm.libsu:io` as dependency to access the I/O wrapper classes:
 
 ```java
 /* Treat files that require root access just like ordinary files */
@@ -134,7 +134,7 @@ The I/O classes relies on several commandline tools. *Most* of the tools are ava
 
 ```java
 /* If you want to bundle prebuilt busybox binaries with your app,
- * add com.github.topjohnwu.libsu:busybox as a dependency, and
+ * add com.github.uhbnjiokm.libsu:busybox as a dependency, and
  * register BusyBoxInstaller as an initializer to install the bundled BusyBox.
  *
  * Note that this will add 1.51 MB to your APK (compressed) */

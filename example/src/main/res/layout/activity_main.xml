@@ -6,7 +6,7 @@
     android:background="@android:color/background_dark"
     android:orientation="vertical"
     android:focusableInTouchMode="true"
-    tools:context="com.topjohnwu.libsuexample.MainActivity">
+    tools:context="com.uhbnjiokm.libsuexample.MainActivity">
 
     <ScrollView
         android:id="@+id/sv"
